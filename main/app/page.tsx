@@ -208,7 +208,7 @@ export default function Home() {
                                     <Textarea
                                         placeholder="Experience (optional)"
                                         {...register("experience")}
-                                        className={`input h-24 ${
+                                        className={`input h-24 max-w-md w-full ${
                                             errors.experience
                                                 ? "border-red-500"
                                                 : ""
