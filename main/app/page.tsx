@@ -21,6 +21,7 @@ import { usePreview } from "./context/previewContext";
 import { routerServerGlobal } from "next/dist/server/lib/router-utils/router-server-context";
 import { useRouter } from "next/navigation";
 import download from "@/lib/lib";
+import Image from "next/image";
 
 export interface DetailsFormData {
     name: string;
@@ -93,10 +94,16 @@ export default function Home() {
                     <h5 className="text-lg text-center mb-4">
                         Please fill out the form below to apply for the job.
                     </h5>
-                    <div className="flex flex-col gap-2 mt-4">
+                    <div className="flex flex-col gap-4 mt-4">
                         <div className="flex flex-col gap-1">
                             <div className="flex justify-center items-center gap-2">
-                                <User2 className="h-5 w-5 text-gray-500" />
+                                <Image
+                                    src="/user.svg"
+                                    alt="User"
+                                    className="h-5 w-5 text-gray-500"
+                                    height={200}
+                                    width={200}
+                                />{" "}
                                 <div className="flex-1 flex flex-col">
                                     <Input
                                         type="text"
@@ -117,7 +124,13 @@ export default function Home() {
 
                         <div className="flex flex-col gap-1">
                             <div className="flex justify-center items-center gap-2">
-                                <Mail className="h-5 w-5 text-gray-500" />
+                                <Image
+                                    src="/mail.svg"
+                                    alt="Email"
+                                    className="h-5 w-5 text-gray-500"
+                                    height={200}
+                                    width={200}
+                                />{" "}
                                 <div className="flex-1 flex flex-col">
                                     <Input
                                         type="email"
@@ -138,11 +151,17 @@ export default function Home() {
 
                         <div className="flex flex-col gap-1">
                             <div className="flex justify-center items-center gap-2">
-                                <Phone className="h-5 w-5 text-gray-500" />
+                                <Image
+                                    src="/phone-call.svg"
+                                    alt="Phone Call"
+                                    className="h-5 w-5 text-gray-500"
+                                    height={200}
+                                    width={200}
+                                />{" "}
                                 <div className="flex-1 flex flex-col">
                                     <Input
                                         type="text"
-                                        placeholder="Phone Number"
+                                        placeholder="Phone Number (e.g. +1234567890)"
                                         {...register("phoneNumber")}
                                         className={`input ${
                                             errors.phoneNumber
@@ -161,11 +180,17 @@ export default function Home() {
 
                         <div className="flex flex-col gap-1">
                             <div className="flex justify-center items-center gap-2">
-                                <Briefcase className="h-5 w-5 text-gray-500" />
+                                <Image
+                                    src="/position.svg"
+                                    alt="Position"
+                                    className="h-5 w-5 text-gray-500"
+                                    height={200}
+                                    width={200}
+                                />
                                 <div className="flex-1 flex flex-col">
                                     <Input
                                         type="text"
-                                        placeholder="Position"
+                                        placeholder="Position (e.g. Software Engineer)"
                                         {...register("position")}
                                         className={`input ${
                                             errors.position
@@ -184,7 +209,13 @@ export default function Home() {
 
                         <div className="flex flex-col gap-1">
                             <div className="flex justify-center items-start gap-2">
-                                <File className="h-5 w-5 mt-1 text-gray-500" />
+                                <Image
+                                    src="/Description.svg"
+                                    alt="Description"
+                                    className="h-5 w-5 text-gray-500 mt-1"
+                                    height={200}
+                                    width={200}
+                                />
                                 <div className="flex-1 flex flex-col">
                                     <Textarea
                                         placeholder="Experience (optional)"
@@ -209,13 +240,19 @@ export default function Home() {
                             <div className="w-1/2 flex justify-center">
                                 <Button
                                     type="button"
-                                    className="w-full bg-green-800 hover:bg-green-700 text-white font-semibold py-2 rounded-md flex justify-center items-center"
+                                    className="w-full bg-gradient-to-r from-green-900 to-green-700 text-white font-semibold py-2 rounded-md flex justify-center items-center"
                                     onClick={handleSubmit((data) => {
                                         setPreview(data);
                                         router.push("/preview");
                                     })}
                                 >
-                                    <EyeIcon className="mr-2 h-5 w-5" />
+                                    <Image
+                                        src="/view.svg"
+                                        alt="View"
+                                        className="h-5 w-5 text-gray-500"
+                                        height={200}
+                                        width={200}
+                                    />{" "}
                                     View Preview
                                 </Button>
                             </div>
@@ -224,7 +261,7 @@ export default function Home() {
                             <div className="w-1/2 flex justify-center">
                                 <Button
                                     type="submit"
-                                    className="w-full bg-green-800 hover:bg-green-700 text-white font-semibold py-2 rounded-md flex justify-center items-center"
+                                    className="w-full bg-gradient-to-r from-green-900 to-green-700 text-white font-semibold py-2 rounded-md flex justify-center items-center"
                                     onClick={handleSubmit(
                                         submitForm,
                                         (errors) => {
@@ -241,7 +278,13 @@ export default function Home() {
                                         }
                                     )}
                                 >
-                                    <Download className="mr-2 h-5 w-5" />
+                                    <Image
+                                        src="/Download.svg"
+                                        alt="Download"
+                                        className="h-5 w-5 text-gray-500"
+                                        height={200}
+                                        width={200}
+                                    />{" "}
                                     Download PDF
                                 </Button>
                             </div>
