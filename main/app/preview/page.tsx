@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-import { ArrowLeft, Download, Router } from "lucide-react";
+import React from "react";
+import { Download } from "lucide-react";
 import { usePreview } from "../context/previewContext";
 import { useRouter } from "next/navigation";
 import download from "@/lib/lib";

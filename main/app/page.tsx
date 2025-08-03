@@ -6,19 +6,7 @@ import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
-import {
-    Briefcase,
-    Computer,
-    Download,
-    EyeIcon,
-    File,
-    Mail,
-    Phone,
-    User2,
-} from "lucide-react";
 import { usePreview } from "./context/previewContext";
-import { routerServerGlobal } from "next/dist/server/lib/router-utils/router-server-context";
 import { useRouter } from "next/navigation";
 import download from "@/lib/lib";
 import Image from "next/image";

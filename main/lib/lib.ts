@@ -19,9 +19,7 @@ const download = async (data: DetailsFormData) => {
 
         let yPosition = 55;
         const lineHeight = 15;
-        const labelWidth = 40;
 
-        // Add form fields to PDF
         const fields = [
             { label: "Name:", value: data.name || "Not provided" },
             { label: "Email:", value: data.email || "Not provided" },
